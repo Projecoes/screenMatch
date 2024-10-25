@@ -1,16 +1,18 @@
-package br.com.screenmatch.modelos;
+package br.com.screenmatch.principal;
 
 import java.util.ArrayList;
 
 import br.com.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.screenmatch.calculos.FiltroRecomendacao;
+import br.com.screenmatch.modelos.Episodio;
+import br.com.screenmatch.modelos.Filme;
+import br.com.screenmatch.modelos.Serie;
 
-public class Main extends Filme{
+public class Principal {
+
 
 	public static void main(String[] args) {
-		Filme meuFilme = new Filme();
-		meuFilme.setNome("O Poderoso pauzao");
-		meuFilme.setAnoLancamento(1969);
+		Filme meuFilme = new Filme("O poderoso pauzão", 1969);
 		meuFilme.setDuracaoEmMinutos(157);
 		meuFilme.exibeFichaTecnica();
 		meuFilme.avalia(10);
@@ -21,14 +23,11 @@ public class Main extends Filme{
 		System.out.println("Media: " + meuFilme.pegaMedia());
 		
 		
-		Filme outroFilme = new Filme();
-		outroFilme.setNome("O rato de calças");
+		Filme outroFilme = new Filme("O rato de botas", 1968);
 		outroFilme.setAnoLancamento(1968);
 		outroFilme.setDuracaoEmMinutos(181);
 		
-		Serie lost = new Serie();
-		lost.setNome("Lost");
-		lost.setAnoLancamento(2014);
+		Serie lost = new Serie("Lost" , 2014);
 		lost.exibeFichaTecnica();
 		lost.setTemporadas(10);
 		lost.setEpisodiosPorTemporada(15);
@@ -50,8 +49,7 @@ public class Main extends Filme{
 		episodio.setTotalVisualizacoes(300);
 		filtro.filtra(episodio);
 		
-		var filmeDoPaulo = new Filme();
-		filmeDoPaulo.setNome("Dogville");
+		var filmeDoPaulo = new Filme("Dogville", 2003);
 		filmeDoPaulo.setDuracaoEmMinutos(200);
 		filmeDoPaulo.setAnoLancamento(2003);
 		filmeDoPaulo.avalia(10);
@@ -62,7 +60,8 @@ public class Main extends Filme{
 		listaDeFilmes.add(filmeDoPaulo);
 		System.out.println("Tamanha da lista: " + listaDeFilmes.size());
 		System.out.println("Primeiro filme: " + listaDeFilmes.get(0).getNome());
-		System.out.println(listaDeFilmes.get(0).toString());
+		System.out.println(listaDeFilmes.get(1).toString());
+
 	}
 
 }
